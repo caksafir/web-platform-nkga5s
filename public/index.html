@@ -2,19 +2,17 @@
 <html>
 
 <head>
-    <style>
-        table,
-        td {
-            border: 1px solid black;
-        }
-    </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <table id="meTable">
-        <tbody id='meTableBody'>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped" id="meTable">
+            <tbody id='meTableBody'>
+            </tbody>
+        </table>
+    </div>
     <script>
         let mTable = document.getElementById("meTable");
         let mMyTable = document.getElementById("meTableBody");
