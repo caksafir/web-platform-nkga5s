@@ -1,89 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.3.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.3.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.3.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.3.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.3.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.3.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.3.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.3.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.3.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.3.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcomes</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+<head>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
         }
-      });
+    </style>
+</head>
+
+<body>
+    <table id="meTable">
+        <tbody id='meTableBody'>
+        </tbody>
+    </table>
+    <script>
+        let mTable = document.getElementById("meTable");
+        let mMyTable = document.getElementById("meTableBody");
+        let mDbData = {};
+        mDbData = Object.assign(mDbData, { [1]: { "ket": "http://dukcapil.tulungagung.go.id/pelayanan.php" } });
+        mDbData = Object.assign(mDbData, { [2]: { "ket": "http://dukcapil.tulungagung.go.id/pengumuman.php" } });
+        mDbData = Object.assign(mDbData, { [0]: { "ket": "Mohonmaafsekarangsaya bingung" } });
+        mDbData = Object.assign(mDbData, { [3]: { "ket": "Mohon maaf, sekarang whatsapp ini hanya untuk yang tidak bisa cetak dokumen KK atau KTP" } });
+        mDbData = Object.assign(mDbData, { [4]: { "ket": "Sekarang data penduduk tidak perlu di onlinekan, data otomatis online dengan dukcapil pusat" } });
+        mDbData = Object.assign(mDbData, { [5]: { "ket": "Bisa juga di cek di SIAK yang ada di kecamatan, atau dukcapil datanya sudah muncul apa belum, kalo muncul berarti sudah online" } });
+        mDbData = Object.assign(mDbData, { [6]: { "ket": "Saat ini sudah ada Identitas Kependudukan Digital (IKD). IKD dapat digunakan untuk melihat data keluarga dan identitas secara online. IKD bisa diinstall di HP android versi 8 ke atas maupun apple. Aktifasi IKD bisa dilakukan di dukcapil, Mall Pelayanan Publik (MPP) utara aloon-aloon, maupun di kecamatan yang sudah melayani pencetakan KTP-el." } });
+        mDbData = Object.assign(mDbData, { [7]: { "ket": "Minta tolong di ketikkan \n NIK : \n NO KK : \n NAMA : \n BERMASALAH KETIKA MENGURUS APA ? :" } });
+        mDbData = Object.assign(mDbData, { [8]: { "ket": "Untuk mengubah atau membuat dokumen silahkan langsung ke kantor." } });
+        mDbData = Object.assign(mDbData, { [9]: { "ket": "Saat ini desa juga sudah bisa melayani pengurusan administrasi kependudukan secara online. dokumen yang bisa dilayani di desa adalah kartu keluarga, akta kelahiran, akta kematian dan surat pindah." } });
+        mDbData = Object.assign(mDbData, { [10]: { "ket": "Untuk cetak KTP-el selain di layani di dukcapil, saat ini sebagian besar kecamatan di kab Tulungagung juga sudah dapat melayani pencetakan KTP-el." } });
+        mDbData = Object.assign(mDbData, { [11]: { "ket": "Perekaman KTP-el gagal, saya ajukan penghapusan ke pusat dulu. 3 minggu lagi foto ulang di kecamatan ya.., atau bisa whatsapp dulu untuk memastikan" } });
+        mDbData = Object.assign(mDbData, { [12]: { "ket": "Silahkan melakukan perekaman KTP-el di kecamatan" } });
+        mDbData = Object.assign(mDbData, { [13]: { "ket": "Pengurusan KIA, pengumpulan berkasnya di desa, pengambilannya bisa diambil secara mandiri di dukcapil dengan membawa foto kopi akta dan nomor pengajuan di desa, atau bisa juga pengambilan kolektif oleh desa" } });
+        mDbData = Object.assign(mDbData, { [14]: { "ket": "Kode sms bisa di cetak melalui https://layananonline.dukcapil.kemendagri.go.id/Tte_warga/index" } });
+        let text = "";
+        for (x in mDbData) {
+            text += "<tr>";
+            text += "<td onclick=copyToClipboard('" + x + "')>" + mDbData[x].ket + "</td>";
+            text += "</tr>";
+        }
+        mMyTable.innerHTML = text;
+
+        function copyToClipboard(lsName) {
+            console.log(mDbData[lsName].ket);
+            navigator.clipboard.writeText(mDbData[lsName].ket);
+        }
     </script>
-  </body>
+
+</body>
+
 </html>
